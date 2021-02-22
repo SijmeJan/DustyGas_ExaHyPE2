@@ -17,7 +17,7 @@ exahype-project DustyGas
     terms const = flux
     optimisation const = generic
     language const = C
-    plot vtk::Cartesian::cells::ascii DustyGasWriter
+    plot vtu::Cartesian::cells::ascii DustyGasWriter
      variables const = 4
      time = 0.0
      repeat = 0.5E-1
