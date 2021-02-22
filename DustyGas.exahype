@@ -18,7 +18,7 @@ exahype-project DustyGas
     optimisation const = generic
     language const = C
     plot vtu::Cartesian::cells::ascii DustyGasWriter
-     variables const = 1
+     variables const = 3
      time = 0.0
      repeat = 0.5E-1
      output = /data/sjp/PSI/variables
