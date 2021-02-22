@@ -31,10 +31,7 @@ void DustyGas::DustyGasSolver::adjustPointSolution(const double* const x,const d
 
   // @todo Please implement/augment if required
   if (tarch::la::equals(t,0.0)) {
-    Variables vars(Q);
-    const double GAMMA = 1.4;
-
-    Q[0] =  std::exp(-((x[0] -0.5) *(x[0] -0.5) + (x[1] -0.5) *(x[1] -0.5)) /
+    Q[0] =  1.0 + std::exp(-((x[0] -0.5) *(x[0] -0.5) + (x[1] -0.5) *(x[1] -0.5)) /
                      (0.05 *0.05)) *1.0e-3;
     Q[1] = 0.0;
     Q[2] = 0.0;
