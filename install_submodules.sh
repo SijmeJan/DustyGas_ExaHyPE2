@@ -11,6 +11,7 @@ autoheader
 cp src/config.h.in .
 automake --add-missing
 
+# Pass on all arguments?
 # MacOS: CXX="g++" CXXFLAGS="-std=c++17"
 ./configure CXX="g++" CXXFLAGS="-std=c++17" --enable-exahype --enable-loadbalancing-toolbox
 
