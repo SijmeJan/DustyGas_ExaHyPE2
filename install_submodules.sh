@@ -10,6 +10,7 @@ autoconf
 autoheader
 cp src/config.h.in .
 automake --add-missing
+autoreconf -i
 
 # Pass on all arguments?
 # MacOS: CXX="g++" CXXFLAGS="-std=c++17"
