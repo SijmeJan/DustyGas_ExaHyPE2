@@ -1,0 +1,3 @@
+[submodule "Peano"]
+	path = Peano
+	url = https://gitlab.lrz.de/hpcsoftware/Peano.git
