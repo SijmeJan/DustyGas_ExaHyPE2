@@ -3,9 +3,15 @@
 cd Peano
 git checkout p4
 
-#awk '/AC_ARG_ENABLE/{x++}x{sub("withval", "enableval")&&x++&&x=(x==2)?0:x}1' configure.ac
+# All of the enable options seem to depend on 'withval' rather than 'enableval'.
+# I am not an expert on autotools, but without replacing it fails to ever
+# enable exahype etc.
+awk '/AC_MSG_CHECKING\(for fem-toolbox/{print;getline;sub("withval", "enableval");print;next}1' configure.ac > tmp && mv tmp configure.ac
+awk '/AC_MSG_CHECKING\(for multiprecision-toolbox/{print;getline;sub("withval", "enableval");print;next}1' configure.ac > tmp && mv tmp configure.ac
+awk '/AC_MSG_CHECKING\(for loadbalancing-toolbox/{print;getline;sub("withval", "enableval");print;next}1' configure.ac > tmp && mv tmp configure.ac
+awk '/AC_MSG_CHECKING\(for exahype/{print;getline;sub("withval", "enableval");print;next}1' configure.ac > tmp && mv tmp configure.ac
 
-# This may fail?
+# Autoconf
 libtoolize
 aclocal
 autoconf
